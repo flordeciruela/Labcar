@@ -26,11 +26,16 @@
 
 /*Header*/
 #hero {
-	height: 600px;
+	height: 475px;
 	background-image: url(../img/taxi.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: bottom;
+}
+
+#hero .background-yellow {
+	height: 220px;
+	margin-top: 120px;
 }
 
 header a {
@@ -39,12 +44,27 @@ header a {
 	color: #5d5c5a;
 }
 
+#hero input {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: #f7b617;
+}
+
+#hero .btn-default {
+	margin-top: 20px;
+}
+
 /*Conductor*/
 #conductor {
 	background-image: url(../img/conduce.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	height: 215px;
+}
+
+#conductor .full-height {
+	background-color: rgba(0, 0, 0, 0.3);
 	height: 215px;
 }
 
@@ -77,9 +97,22 @@ footer a, footer li {
 @media (min-width: 768px) {
 	#hero {
 		background-position: 100% 92%;
+		height: 600px;
+	}
+
+	#hero .background-yellow {
+		height: 370px;
+	}
+
+	#hero h2 {
+		line-height: 15px;
 	}
 
 	#conductor {
+		height: 500px;
+	}
+
+	#conductor .full-height {
 		height: 500px;
 	}
 
