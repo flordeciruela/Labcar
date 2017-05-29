@@ -6,7 +6,6 @@
 	background-color: #f7b617;
 }
 
-#conductor > div
 .full-height {
 	height: 100%;
 }
@@ -29,10 +28,6 @@
 	background-position: bottom;
 }
 
-#hero > div {
-	background-color: #f7b617;
-}
-
 /*Conductor*/
 #conductor {
 	background-image: url(../img/conduce.jpg);
@@ -42,12 +37,21 @@
 	height: 215px;
 }
 
+/*Tarifa*/
+#tarifa {
+	height: 420px;
+}
+
 @media (min-width: 768px) {
 	#hero {
 		background-position: 100% 92%;
 	}
 
 	#conductor {
+		height: 500px;
+	}
+
+	#tarifa {
 		height: 500px;
 	}
 }
