@@ -1,0 +1,21 @@
+.text-white {
+	color: #fff;
+}
+
+#hero {
+	height: 600px;
+	background-image: url(../img/taxi.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#hero > div {
+	background-color: #f7b617;
+}
+
+@media (min-width: 700px) {
+	#hero {
+		background-position: 100% 92%;
+	}
+}
