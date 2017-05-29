@@ -2,6 +2,25 @@
 	color: #fff;
 }
 
+.background-yellow {
+	background-color: #f7b617;
+}
+
+#conductor > div
+.full-height {
+	height: 100%;
+}
+
+.padding-y {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.border-white {
+	border: 1px solid #fff;
+}
+
+/*Header*/
 #hero {
 	height: 600px;
 	background-image: url(../img/taxi.jpg);
@@ -14,8 +33,21 @@
 	background-color: #f7b617;
 }
 
-@media (min-width: 700px) {
+/*Conductor*/
+#conductor {
+	background-image: url(../img/conduce.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 215px;
+}
+
+@media (min-width: 768px) {
 	#hero {
 		background-position: 100% 92%;
+	}
+
+	#conductor {
+		height: 500px;
 	}
 }
