@@ -12,27 +12,27 @@
 		<header>
 			<nav class="navbar-default container-fluid">
 				<div class="panel-group visible-xs" id="accordion" role="tablist" aria-multiselectable="true">
-					<div class="">
-						<div class="panel-heading" role="tab" id="headingOne">
-							<a class="collapsed navbar-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-								<i class="glyphicon glyphicon-menu-hamburger"></i>
-							</a>
-							<a href="#"><img src="assets/img/logo.png" class="center-block" alt="Logo Header" width="100px"></a>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-							<div class="list-group">
-								<div class="navbar">
-									<a href="#">Viaja</a>
-								</div>
-								<div class="navbar">
-									<a href="#">Conduce</a>
-								</div>
-								<div class="navbar">
-									<a href="#">Inicia Sesión</a>
-								</div>
+
+					<div class="panel-heading" role="tab" id="headingOne">
+						<a class="collapsed navbar-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="glyphicon glyphicon-menu-hamburger"></i>
+						</a>
+						<a href="#"><img src="assets/img/logo.png" class="center-block" alt="Logo Header" width="100px"></a>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="list-group">
+							<div class="navbar">
+								<a href="#">Viaja</a>
+							</div>
+							<div class="navbar">
+								<a href="#">Conduce</a>
+							</div>
+							<div class="navbar">
+								<a href="#">Inicia Sesión</a>
 							</div>
 						</div>
 					</div>
+
 
 				</div>
 			  <div class="container hidden-xs">
@@ -113,7 +113,7 @@
 			<div class="container">
 				<div class="row">
 				  <div class="col-xs-12 text-white">
-						<div class="pull-left full-height text-white col-md-6">
+						<div class="pull-left full-height text-white col-md-4">
 							<h3>Tarifas</h3>
 							<p>Consulta las tarifas LabCar aquí</p>
 							<form class="form-horizontal">
@@ -136,8 +136,10 @@
 							  </div>
 							</form>
 						</div>
-						<div class="pull-right full-height border-white col-md-6 hidden-xs hidden-sm" id="map">
+						<div class="pull-right full-height border-white col-md-6 col-md-offset-2 hidden-xs hidden-sm">
+							<div class="" id="map">
 
+							</div>
 						</div>
 				  </div>
 				</div>
@@ -145,11 +147,61 @@
 		</section>
 
 		<footer>
-			
+			<div class="container text-white padding-y">
+				<img src="assets/img/logo-blanco.png" alt="Logo blanco">
+				<hr>
+				<div class="row">
+					<div class="col-md-3 hidden-xs  hidden-sm">
+						<a href="#"><i>Ico</i></a>
+						<a href="#"><i>Ico</i></a>
+						<a href="#"><i>Ico</i></a>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<ul class="list-group list-unstyled">
+							<li class="list-group"><a href="#">Viaja</a></li>
+							<li class="list-group"><a href="#">Conduce</a></li>
+							<li class="list-group"><a href="#">Ciudades</a></li>
+							<li class="list-group"><a href="#">Tarifas</a></li>
+							<li class="list-group"><a href="#">Entregas</a></li>
+							<li class="list-group"><a href="#">Cómo funciona</a></li>
+							<li class="list-group"><a href="#">Países</a></li>
+							<li class="list-group"><a href="#">Seguridad</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 hidden-xs  hidden-sm">
+						<ul class="list-group list-unstyled">
+							<li class="list-group"><a href="#">Oportunidades</a></li>
+							<li class="list-group"><a href="#">Nuestra historia</a></li>
+							<li class="list-group"><a href="#">API de LabCar</a></li>
+							<li class="list-group"><a href="#">Eventos</a></li>
+							<li class="list-group"><a href="#">Desarrolladores</a></li>
+							<li class="list-group"><a href="#">Servicios</a></li>
+							<li class="list-group"><a href="#">Laboratoria</a></li>
+							<li class="list-group"><a href="#">Coders</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-6">
+						<div class="visible-xs  visible-sm">
+							<a href="#"><i>Ico</i></a>
+							<a href="#"><i>Ico</i></a>
+							<a href="#"><i>Ico</i></a>
+						</div>
+						<div class="padding-y-10">
+							<img src="assets/img/app-store.png" alt="Apple store">
+						</div>
+						<div>
+							<img src="assets/img/google-play.png" alt="Google play">
+						</div>
+					</div>
+				</div>
+				<hr>
+				<p class="text-center">© 2017 LabCar technologies Inc.</p>
+			</div>
 		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
 		<script src="assets/js/app.js" charset="utf-8"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGBo99va1e7BgaLu1msKklvzfav_RDBPM&callback=initMap"async defer></script>
 	</body>
 </html>
