@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Labcar</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Labcar</title>
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
 	<body>
@@ -13,11 +14,11 @@
 			<nav class="container-fluid">
 				<div class="panel-group visible-xs" id="accordion" role="tablist" aria-multiselectable="true">
 
-					<div class="panel-heading" role="tab" id="headingOne">
-						<a class="collapsed navbar-left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
-							<i class="glyphicon glyphicon-menu-hamburger"></i>
+					<div role="tab" class="panel-group" id="headingOne">
+						<a class="collapsed left" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="fa fa-bars" aria-hidden="true"></i>
 						</a>
-						<a href="#"><img src="assets/img/logo.png" class="center-block" alt="Logo Header" width="100px"></a>
+						<a href="#"><img src="assets/img/logo.png" class="logo" alt="Logo Header" width="100px"></a>
 					</div>
 					<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 						<div class="list-group">
@@ -160,9 +161,11 @@
 				<hr>
 				<div class="row">
 					<div class="col-md-3 hidden-xs  hidden-sm">
-						<a href="#"><i>Ico</i></a>
-						<a href="#"><i>Ico</i></a>
-						<a href="#"><i>Ico</i></a>
+						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-play" aria-hidden="true"></i></a>
 					</div>
 					<div class="col-md-3 col-xs-6">
 						<ul class="list-group list-unstyled">
@@ -190,9 +193,11 @@
 					</div>
 					<div class="col-md-3 col-xs-6">
 						<div class="visible-xs  visible-sm">
-							<a href="#"><i>Ico</i></a>
-							<a href="#"><i>Ico</i></a>
-							<a href="#"><i>Ico</i></a>
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+	            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+	            <a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a>
+	            <a href="#"><i class="fa fa-play" aria-hidden="true"></i></a>
 						</div>
 						<div class="padding-y-10">
 							<img src="assets/img/app-store.png" alt="Apple store">
@@ -210,6 +215,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.min.js" charset="utf-8"></script>
 		<script src="assets/js/app.js" charset="utf-8"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGBo99va1e7BgaLu1msKklvzfav_RDBPM&callback=initMap"async defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGBo99va1e7BgaLu1msKklvzfav_RDBPM&callback=initMap&libraries=places"async defer></script>
 	</body>
 </html>

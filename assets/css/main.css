@@ -24,6 +24,21 @@
 	border: 1px solid #fff;
 }
 
+/*nav*/
+#headingOne {
+ padding-top: 17px;
+}
+
+#headingOne a {
+	margin-right: 70px;
+	margin-top: 4px;
+}
+
+.navbar-left a {
+	display: inline-block !important;
+	margin-top: 3px;
+}
+
 /*Header*/
 #hero {
 	height: 475px;
@@ -35,7 +50,8 @@
 
 #hero .background-yellow {
 	height: 220px;
-	margin-top: 120px;
+	margin-top: 100px;
+	padding-top: 60px;
 }
 
 header a {
@@ -94,7 +110,15 @@ footer a, footer li {
 	color: #fff;
 }
 
+footer a:hover {
+	color: gray;
+}
+
 @media (min-width: 768px) {
+	.navbar-left {
+		padding-top: 10px !important;
+	}
+
 	#hero {
 		background-position: 100% 92%;
 		height: 600px;
