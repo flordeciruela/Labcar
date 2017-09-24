@@ -51,7 +51,12 @@
 #hero .background-yellow {
 	height: 220px;
 	margin-top: 100px;
-	padding-top: 60px;
+	padding-top: 0;
+}
+
+#hero .hidden-xs #logo-blanco {
+	margin-top: 0.5em;
+	margin-left: 5px;
 }
 
 header a {
@@ -68,6 +73,11 @@ header a {
 
 #hero .btn-default {
 	margin-top: 20px;
+}
+
+/*Informacion*/
+#informacion h5.visible-xs {
+	margin-top: 0.5em;
 }
 
 /*Conductor*/
@@ -87,6 +97,10 @@ header a {
 /*Tarifa*/
 #tarifa {
 	height: 420px;
+}
+
+#tarifa #btn-ruta {
+	margin-bottom: 1em;
 }
 
 #map {
@@ -126,6 +140,7 @@ footer a:hover {
 
 	#hero .background-yellow {
 		height: 370px;
+		padding-top: 60px;
 	}
 
 	#hero h2 {

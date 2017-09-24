@@ -59,17 +59,17 @@
 								<h2>Disfruta del viaje</h2>
 								<h2>Eres dueño de tu tiempo</h2>
 								<span>Viaja con</span>
-								<img src="assets/img/logo-blanco.png" alt="Logo blanco" width="100px">
+								<img src="assets/img/logo-blanco.png" alt="Logo blanco" id="logo-blanco" width="100px">
 								<h5>REGÍSTRATE</h5>
 							</div>
 							<form class="hidden-xs container text-white">
 								<div class="form-inline">
 									<div class="form-group">
-										<input type="text" required="Completa este campo">
+										<input type="text">
 									</div>
 									<span>O bien</span>
 									<div class="form-group">
-										<input type="text" required="Completa este campo">
+										<input type="text">
 									</div>
 								</div>
 								<button type="submit" class="btn btn-default"><strong>Conviértete en conductor</strong></button>
@@ -127,7 +127,7 @@
 						<div class="pull-left full-height text-white col-md-4">
 							<h3>Tarifas</h3>
 							<p>Consulta las tarifas LabCar aquí</p>
-							<form class="form-horizontal">
+							<div class="form-horizontal">
 							  <div class="form-group">
 							    <label for="input-partida" class="col-xs-1 control-label label"><img src="assets/img/circulo.png"></label>
 							    <div class="col-xs-10 col-sm-11">
@@ -141,11 +141,13 @@
 							    </div>
 							  </div>
 							  <div class="form-group">
-							    <div class="col-xs-offset-2 col-xs-10">
-							      <button type="submit" class="btn btn-default text-uppercase"><strong>¡Trazar ruta!</strong></button>
-							    </div>
+							    <div class="text-center">
+							      <button type="submit" id="btn-ruta" class="btn btn-default text-uppercase"><strong>¡Trazar ruta!</strong></button>
+										<h4 id="info-tarifa"></h4>
+										<h4 id="info-duracion"></h4>
+									</div>
 							  </div>
-							</form>
+							</div>
 						</div>
 						<div class="pull-right full-height border-white col-md-6 col-md-offset-2 hidden-xs hidden-sm">
 							<div id="map"></div>

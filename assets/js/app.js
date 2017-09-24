@@ -1,74 +1,73 @@
-var map, infoWindow, ubicacion;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -12.1188, lng: -77.037},
-    zoom: 18
+  var latitud, longitud, marcador;
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 5,
+    center: {lat: -9.082632, lng: -84.0431127} // Map on load
   });
-  infoWindow = new google.maps.InfoWindow;
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+  var miUbicacion = function(posicion) {
+    latitud = posicion.coords.latitude;
+    longitud = posicion.coords.longitude;
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      map.setCenter(pos);
-      console.log(pos);
-      var marker = new google.maps.Marker({
-        position: pos,
-        map: map
-      });
-
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+    marcador = new google.maps.Marker({
+      position: {lat:latitud, lng:longitud},
+      animation: google.maps.Animation.DROP,
+      map: map
     });
-  } else {
-    handleLocationError(false, infoWindow, map.getCenter());
+    map.setZoom(17);
+    map.setCenter({lat:latitud, lng:longitud});
   }
 
-  //autocompletePartida
-  var inputSalida = document.getElementById('input-partida');
-  var autocompletePartida = new google.maps.places.Autocomplete(inputSalida);
-  autocompletePartida.bindTo('bounds', map);
+  var error = function (error) {
+    window.alert("Error al cargar Google Maps: Tu navegador no soporta la API Geolocation");
+  }
 
-  var infowindow = new google.maps.InfoWindow();
-  var infowindowContent = document.getElementById('infowindow-content');
-  infowindow.setContent(infowindowContent);
-  autocompletePartida.addListener('place_changed', function() {
-    infowindow.close();
-    var place = autocompletePartida.getPlace();
-    if (!place.geometry) {
-      window.alert("No details available for input: '" + place.name + "'");
-      return;
+  function buscar(e) {
+    e.preventDefault();
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(miUbicacion,error);
     }
+  }
+
+  //Ruta
+  var puntoPartida = document.getElementById("input-partida");
+  var puntoDestino = document.getElementById("input-destino");
+  new google.maps.places.Autocomplete(puntoPartida);
+  new google.maps.places.Autocomplete(puntoDestino);
+
+  var direccionService = new google.maps.DirectionsService;
+  var direccionDisplay = new google.maps.DirectionsRenderer;
+
+  var calcularRuta = function (direccionService, direccionDisplay) {
+    var request = {
+      origin: puntoPartida.value,
+      destination: puntoDestino.value,
+      travelMode: 'DRIVING'
+    };
+
+    direccionService.route(request, function(result, status) {
+      if (status == 'OK') {
+        var distancia = result.routes[0].legs[0].distance.value/1000;
+        var duracion = result.routes[0].legs[0].duration.text;
+        var costo = (distancia*1.75).toFixed(2);
+
+        document.getElementById('info-tarifa').innerHTML="";
+        document.getElementById('info-duracion').innerHTML="";
+        document.getElementById('info-tarifa').innerHTML=`El costo es de: S/. ${costo}`;
+        document.getElementById('info-duracion').innerHTML=`Duración del trayecto: ${duracion}`;
+        direccionDisplay.setDirections(result);
+      }
+    });
+
+    direccionDisplay.setMap(map);
+    marcador.setMap(null);
+  }
+
+  window.addEventListener("load", buscar);
+  document.getElementById('btn-ruta').addEventListener("click",function(e){
+    e.preventDefault();
+    calcularRuta(direccionService, direccionDisplay);
   });
 
-  //autocompleteLlegada
-  var inputLlegada = document.getElementById('input-llegada');
-  var autocompleteLlegada = new google.maps.places.Autocomplete(inputLlegada);
-  autocompleteLlegada.bindTo('bounds', map);
-
-  var infowindow = new google.maps.InfoWindow();
-  var infowindowContent = document.getElementById('infowindow-content');
-  infowindow.setContent(infowindowContent);
-  autocompleteLlegada.addListener('place_changed', function() {
-    infowindow.close();
-    var place = autocompleteLlegada.getPlace();
-    if (!place.geometry) {
-      window.alert("No details available for input: '" + place.name + "'");
-      return;
-    }
-  });
-
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
 }
